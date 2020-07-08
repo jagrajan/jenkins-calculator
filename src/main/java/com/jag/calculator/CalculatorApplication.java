@@ -1,5 +1,6 @@
 package com.jag.calculator;
 
+import java.util.Collections;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CalculatorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculatorApplication.class, args);
+		SpringApplication app = new SpringApplication(CalculatorApplication.class);
+    app.setDefaultProperties(Collections
+        .singletonMap("server.port", "8083"));
+    app.run(args);
 	}
 
 }
