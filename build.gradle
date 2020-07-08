@@ -17,7 +17,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-  testCompile 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.12'
 }
 
 test {
@@ -33,4 +33,9 @@ jacocoTestCoverageVerification {
       }
     }
   }
+}
+
+apply plugin: "checkstyle"
+checkstyle {
+  checkstyleTest.enabled = false
 }
