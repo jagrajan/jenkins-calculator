@@ -42,5 +42,13 @@ pipeline {
         }
       }
     }
+    stage("List out files") {
+      agent {
+        label "master-node"
+      }
+      steps {
+        sh "ls -a"
+      }
+    }
   }
 }
