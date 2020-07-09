@@ -5,7 +5,7 @@ pipeline {
   }
   stages {
     stage("compile and test code") {
-      agent { docker "jagrajan/jenkins-agent-java" }
+      agent { "docker" }
       stages {
         stage("Compile") {
           steps {
