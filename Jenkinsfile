@@ -5,7 +5,9 @@ pipeline {
   }
   stages {
     stage("compile and test code") {
-      agent { "docker" }
+      agent {
+        label "docker-java-agent"
+      }
       stages {
         stage("Compile") {
           steps {
